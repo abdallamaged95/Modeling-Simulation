@@ -12,3 +12,5 @@ D:\Study\FCIS 2024\Sem 7\Modeling\Modeling-Simulation\MultiQueueSimulation\Multi
 D:\Study\FCIS 2024\Sem 7\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CopyComplete
 D:\Study\FCIS 2024\Sem 7\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.exe
 D:\Study\FCIS 2024\Sem 7\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.pdb
+D:\Study\FCIS 2024\Sem 7\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.InterArrivalDistributionForm.resources
+D:\Study\FCIS 2024\Sem 7\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.ServersForm.resources

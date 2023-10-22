@@ -27,3 +27,9 @@ ServiceDistribution_Server2
 4, 0.25
 5, 0.20
 6, 0.20 
+
+ServiceDistribution_Server3
+3, 0.75
+4, 0.35
+5, 0.10
+6, 0.230 

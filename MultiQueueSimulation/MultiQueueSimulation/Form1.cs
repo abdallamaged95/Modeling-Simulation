@@ -1,14 +1,8 @@
 ﻿using MultiQueueModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Design;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MultiQueueSimulation
@@ -43,65 +37,32 @@ namespace MultiQueueSimulation
                     MessageBox.Show(exc.Message);
                 }
             }
-            //textBox1.Text = inputText;
-            Spliting(inputText);
 
+            SplitController.readInput(system, inputText);
+
+            serverNum.Text = system.NumberOfServers.ToString();
+            stoppingNumber.Text = system.StoppingNumber.ToString();
+            stoppingCriteria.Text = system.StoppingCriteria.ToString();
+            selectionMethod.Text = system.SelectionMethod.ToString();
 
         }
-        private void Spliting(string inputText)
+        
+
+        private void interArrivalBtn_Click(object sender, EventArgs e)
         {
-            string[] input = inputText.Split('\n');
-            input = input.Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
-
-            this.system.NumberOfServers = int.Parse(input[1]);
-
-            this.system.StoppingNumber = int.Parse(input[3]);
-
-            if (input[5] == "1")
-                this.system.StoppingCriteria = Enums.StoppingCriteria.NumberOfCustomers;
-            else this.system.StoppingCriteria = Enums.StoppingCriteria.SimulationEndTime;
-            
-            
-            if (int.Parse(input[7]) == 1)
-                this.system.SelectionMethod = Enums.SelectionMethod.HighestPriority;
-            else if (int.Parse(input[7]) == 2)
-                this.system.SelectionMethod = Enums.SelectionMethod.Random;
-            else if (int.Parse(input[7]) == 3)
-                this.system.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
-            else
-                MessageBox.Show("Error");
-
-
-            int idx = 9;
-            while ((int)(input[idx][0]) >= '0' && (int)(input[idx][0]) <= '9')
+            if (system.InterarrivalDistribution.Count > 0)
             {
-                string[] times = input[idx].Split(',', ' ');
-                times = times.Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
-                TimeDistribution data = new TimeDistribution();
-                data.Time = int.Parse(times[0]);
-                data.Probability = Convert.ToDecimal(times[1]);
-                this.system.InterarrivalDistribution.Add(data);
-                idx++;
+                InterArrivalDistributionForm form = new InterArrivalDistributionForm(system.InterarrivalDistribution);
+                form.Show();
             }
-            int id = 0;
-            Server server = null;
-            while (idx < input.Length)
+        }
+
+        private void serversDistributionBtn_Click(object sender, EventArgs e)
+        {
+            if (system.Servers.Count > 0)
             {
-                if (!((int)(input[idx][0]) >= '0' && (int)(input[idx][0]) <= '9'))
-                {
-                    server = new Server();
-                    id++;
-                    idx++;
-                }
-                string[] times = input[idx].Split(',', ' ');
-                times = times.Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
-                TimeDistribution data = new TimeDistribution();
-                data.Time = int.Parse(times[0]);
-                data.Probability = Convert.ToDecimal(times[1]);
-                server.TimeDistribution.Add(data);
-                server.ID = id;
-                this.system.Servers.Add(server);
-                idx++;
+                ServersForm form = new ServersForm(system.Servers);
+                form.Show();
             }
         }
     }
