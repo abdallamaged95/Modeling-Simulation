@@ -21,35 +21,29 @@ namespace MultiQueueSimulation
             idx = 0;
             InitializeComponent();
         }
-        public ServersForm()
-        {
-            InitializeComponent();
-        }
 
         private void ServersForm_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = servers[idx].TimeDistribution;
+            serverID.Text = "Server ID: " + servers[idx].ID.ToString();
+
         }
-        
+
         private void prevBtn_Click(object sender, EventArgs e)
         {
-            if (idx > 0)
-            {
-                idx--;
-                dataGridView1.DataSource = servers[idx].TimeDistribution;
-                dataGridView1.Refresh();
-            }
+            idx =  (idx > 0) ? --idx : servers.Count - 1;
+            
+            dataGridView1.DataSource = servers[idx].TimeDistribution;
+            serverID.Text = "Server ID: " + servers[idx].ID.ToString();
+
         }
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
-            if (idx < servers.Count - 1)
-            {
-                idx++;
-                dataGridView1.DataSource = servers[idx].TimeDistribution;
-                dataGridView1.Refresh();
-            }
+            idx = (idx < servers.Count - 1) ? ++idx : 0;
+           
+            dataGridView1.DataSource = servers[idx].TimeDistribution;
+            serverID.Text = "Server ID: " + servers[idx].ID.ToString();
         }
-
     }
 }

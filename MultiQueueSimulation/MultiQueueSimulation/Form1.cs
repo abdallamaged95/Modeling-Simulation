@@ -15,22 +15,17 @@ namespace MultiQueueSimulation
             InitializeComponent();
             this.system = system;
         }
-        public Form1()
-        {
-            InitializeComponent();
-        }
 
         private void browseButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
-            string file = "", inputText = "";
+            string inputText = "";
             if (result == DialogResult.OK) // Test result.
             {
-                file = openFileDialog1.FileName;
                 try
                 {
-                    inputText = File.ReadAllText(file);
+                    inputText = File.ReadAllText(openFileDialog1.FileName);
                 }
                 catch (IOException exc)
                 {

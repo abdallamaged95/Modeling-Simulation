@@ -44,11 +44,12 @@
             // browseButton
             // 
             this.browseButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.browseButton.Location = new System.Drawing.Point(0, 363);
-            this.browseButton.MaximumSize = new System.Drawing.Size(0, 50);
-            this.browseButton.MinimumSize = new System.Drawing.Size(0, 50);
+            this.browseButton.Location = new System.Drawing.Point(0, 301);
+            this.browseButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.browseButton.MaximumSize = new System.Drawing.Size(0, 41);
+            this.browseButton.MinimumSize = new System.Drawing.Size(0, 41);
             this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(732, 50);
+            this.browseButton.Size = new System.Drawing.Size(550, 41);
             this.browseButton.TabIndex = 0;
             this.browseButton.Text = "Browse";
             this.browseButton.UseVisualStyleBackColor = true;
@@ -57,9 +58,10 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(13, 13);
+            this.label12.Location = new System.Drawing.Point(10, 11);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(121, 16);
+            this.label12.Size = new System.Drawing.Size(97, 13);
             this.label12.TabIndex = 1;
             this.label12.Text = "Number Of Servers";
             // 
@@ -67,28 +69,31 @@
             // 
             this.serverNum.AutoSize = true;
             this.serverNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.serverNum.Location = new System.Drawing.Point(141, 13);
-            this.serverNum.MinimumSize = new System.Drawing.Size(50, 2);
+            this.serverNum.Location = new System.Drawing.Point(106, 11);
+            this.serverNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.serverNum.MinimumSize = new System.Drawing.Size(38, 2);
             this.serverNum.Name = "serverNum";
-            this.serverNum.Size = new System.Drawing.Size(50, 18);
+            this.serverNum.Size = new System.Drawing.Size(38, 15);
             this.serverNum.TabIndex = 2;
             // 
             // stoppingNumber
             // 
             this.stoppingNumber.AutoSize = true;
             this.stoppingNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.stoppingNumber.Location = new System.Drawing.Point(141, 48);
-            this.stoppingNumber.MinimumSize = new System.Drawing.Size(50, 2);
+            this.stoppingNumber.Location = new System.Drawing.Point(106, 39);
+            this.stoppingNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.stoppingNumber.MinimumSize = new System.Drawing.Size(38, 2);
             this.stoppingNumber.Name = "stoppingNumber";
-            this.stoppingNumber.Size = new System.Drawing.Size(50, 18);
+            this.stoppingNumber.Size = new System.Drawing.Size(38, 15);
             this.stoppingNumber.TabIndex = 4;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 48);
+            this.label11.Location = new System.Drawing.Point(10, 39);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(112, 16);
+            this.label11.Size = new System.Drawing.Size(89, 13);
             this.label11.TabIndex = 3;
             this.label11.Text = "Stopping Number";
             // 
@@ -96,18 +101,20 @@
             // 
             this.stoppingCriteria.AutoSize = true;
             this.stoppingCriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.stoppingCriteria.Location = new System.Drawing.Point(141, 83);
-            this.stoppingCriteria.MinimumSize = new System.Drawing.Size(50, 2);
+            this.stoppingCriteria.Location = new System.Drawing.Point(106, 67);
+            this.stoppingCriteria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.stoppingCriteria.MinimumSize = new System.Drawing.Size(38, 2);
             this.stoppingCriteria.Name = "stoppingCriteria";
-            this.stoppingCriteria.Size = new System.Drawing.Size(50, 18);
+            this.stoppingCriteria.Size = new System.Drawing.Size(38, 15);
             this.stoppingCriteria.TabIndex = 6;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 83);
+            this.label10.Location = new System.Drawing.Point(10, 67);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 16);
+            this.label10.Size = new System.Drawing.Size(84, 13);
             this.label10.TabIndex = 5;
             this.label10.Text = "Stopping Criteria";
             // 
@@ -115,26 +122,29 @@
             // 
             this.selectionMethod.AutoSize = true;
             this.selectionMethod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.selectionMethod.Location = new System.Drawing.Point(141, 122);
-            this.selectionMethod.MinimumSize = new System.Drawing.Size(50, 2);
+            this.selectionMethod.Location = new System.Drawing.Point(106, 99);
+            this.selectionMethod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.selectionMethod.MinimumSize = new System.Drawing.Size(38, 2);
             this.selectionMethod.Name = "selectionMethod";
-            this.selectionMethod.Size = new System.Drawing.Size(50, 18);
+            this.selectionMethod.Size = new System.Drawing.Size(38, 15);
             this.selectionMethod.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 122);
+            this.label2.Location = new System.Drawing.Point(10, 99);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 16);
+            this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Selection Method";
             // 
             // interArrivalBtn
             // 
-            this.interArrivalBtn.Location = new System.Drawing.Point(393, 13);
+            this.interArrivalBtn.Location = new System.Drawing.Point(295, 11);
+            this.interArrivalBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.interArrivalBtn.Name = "interArrivalBtn";
-            this.interArrivalBtn.Size = new System.Drawing.Size(192, 51);
+            this.interArrivalBtn.Size = new System.Drawing.Size(144, 41);
             this.interArrivalBtn.TabIndex = 9;
             this.interArrivalBtn.Text = "InterArrival Distribution";
             this.interArrivalBtn.UseVisualStyleBackColor = true;
@@ -142,9 +152,10 @@
             // 
             // serversDistributionBtn
             // 
-            this.serversDistributionBtn.Location = new System.Drawing.Point(393, 76);
+            this.serversDistributionBtn.Location = new System.Drawing.Point(295, 62);
+            this.serversDistributionBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.serversDistributionBtn.Name = "serversDistributionBtn";
-            this.serversDistributionBtn.Size = new System.Drawing.Size(192, 62);
+            this.serversDistributionBtn.Size = new System.Drawing.Size(144, 50);
             this.serversDistributionBtn.TabIndex = 10;
             this.serversDistributionBtn.Text = "ServiceDistribution Servers";
             this.serversDistributionBtn.UseVisualStyleBackColor = true;
@@ -152,9 +163,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 413);
+            this.ClientSize = new System.Drawing.Size(550, 342);
             this.Controls.Add(this.serversDistributionBtn);
             this.Controls.Add(this.interArrivalBtn);
             this.Controls.Add(this.selectionMethod);
@@ -166,8 +177,9 @@
             this.Controls.Add(this.serverNum);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.browseButton);
-            this.MaximumSize = new System.Drawing.Size(750, 460);
-            this.MinimumSize = new System.Drawing.Size(750, 460);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(566, 381);
+            this.MinimumSize = new System.Drawing.Size(566, 381);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

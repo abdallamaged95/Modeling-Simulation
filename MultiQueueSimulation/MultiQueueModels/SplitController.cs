@@ -11,16 +11,17 @@ namespace MultiQueueModels
         static int idx;
         public static void readInput(SimulationSystem system, string inputText)
         {
-            string[] input = inputText.Split('\n');
-            input = input.Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
+            string[] input = inputText.Split('\n').
+                Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
+
             assignValues(system, input);
             IntervalDistribution(system, input);
             ServerDistributions(system, input);
+
             CalcRange.fillTimeDistribution(system.InterarrivalDistribution);
+
             for (int i = 0; i < system.Servers.Count; i++)
-            {
                 CalcRange.fillTimeDistribution(system.Servers[i].TimeDistribution);
-            }
         }
 
         private static void IntervalDistribution(SimulationSystem system, string[] input)
@@ -28,14 +29,19 @@ namespace MultiQueueModels
             idx = 9;
             while ((int)(input[idx][0]) >= '0' && (int)(input[idx][0]) <= '9')
             {
-                string[] times = input[idx].Split(',', ' ');
-                times = times.Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
-                TimeDistribution data = new TimeDistribution();
-                data.Time = int.Parse(times[0]);
-                data.Probability = Convert.ToDecimal(times[1]);
-                system.InterarrivalDistribution.Add(data);
-                idx++;
+                string[] times = input[idx].Split(',', ' ').
+                    Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
+                system.InterarrivalDistribution.Add(addDistribution(system, times));
             }
+        }
+
+        private static TimeDistribution addDistribution(SimulationSystem system, string[] times)
+        {
+            TimeDistribution data = new TimeDistribution();
+            data.Time = int.Parse(times[0]);
+            data.Probability = Convert.ToDecimal(times[1]);
+            idx++;
+            return data;
         }
         private static void ServerDistributions(SimulationSystem system, string[] input)
         {
@@ -51,14 +57,11 @@ namespace MultiQueueModels
                     id++;
                     idx++;
                 }
-                string[] times = input[idx].Split(',', ' ');
-                times = times.Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
-                TimeDistribution data = new TimeDistribution();
-                data.Time = int.Parse(times[0]);
-                data.Probability = Convert.ToDecimal(times[1]);
-                server.TimeDistribution.Add(data);
+                string[] times = input[idx].Split(',', ' ')
+                    .Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
+                
+                server.TimeDistribution.Add(addDistribution(system, times));
                 server.ID = id;
-                idx++;
             }
             system.Servers.Add(server);
         }
@@ -68,9 +71,8 @@ namespace MultiQueueModels
 
             system.StoppingNumber = int.Parse(input[3]);
 
-            if (input[5] == "1")
-                system.StoppingCriteria = Enums.StoppingCriteria.NumberOfCustomers;
-            else system.StoppingCriteria = Enums.StoppingCriteria.SimulationEndTime;
+            system.StoppingCriteria = (input[5] == "1") ? Enums.StoppingCriteria.NumberOfCustomers
+            : Enums.StoppingCriteria.SimulationEndTime;
 
 
             if (int.Parse(input[7]) == 1)
