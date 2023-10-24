@@ -10,3 +10,9 @@ E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\MultiQueueSimu
 E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.CoreCompileInputs.cache
 E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.dll
 E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.pdb
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueModels\bin\Debug\MultiQueueModels.dll
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueModels\bin\Debug\MultiQueueModels.pdb
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.AssemblyReference.cache
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.CoreCompileInputs.cache
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.dll
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.pdb

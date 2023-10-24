@@ -15,8 +15,8 @@ namespace MultiQueueModels
                 Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
 
             assignValues(system, input);
-            IntervalDistribution(system, input);
-            ServerDistributions(system, input);
+            intervalDistribution(system, input);
+            serverDistributions(system, input);
 
             CalcRange.fillTimeDistribution(system.InterarrivalDistribution);
 
@@ -24,7 +24,7 @@ namespace MultiQueueModels
                 CalcRange.fillTimeDistribution(system.Servers[i].TimeDistribution);
         }
 
-        private static void IntervalDistribution(SimulationSystem system, string[] input)
+        private static void intervalDistribution(SimulationSystem system, string[] input)
         {
             idx = 9;
             while ((int)(input[idx][0]) >= '0' && (int)(input[idx][0]) <= '9')
@@ -43,7 +43,7 @@ namespace MultiQueueModels
             idx++;
             return data;
         }
-        private static void ServerDistributions(SimulationSystem system, string[] input)
+        private static void serverDistributions(SimulationSystem system, string[] input)
         {
             int id = 0;
             Server server = null;

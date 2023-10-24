@@ -18,14 +18,17 @@ namespace MultiQueueSimulation
         {
             SimulationSystem system = new SimulationSystem();
 
-
-            //string result = TestingManager.Test(system, Constants.FileNames.TestCase1);
-            //MessageBox.Show(result);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form form1 = new Form1(system);
-
             Application.Run(form1);
+
+            SimulationTableHandler handler = new SimulationTableHandler(system);
+            handler.Simulate();
+            string result = TestingManager.Test(system, Constants.FileNames.TestCase1);
+            MessageBox.Show(result);
+
+
            
         }
     }

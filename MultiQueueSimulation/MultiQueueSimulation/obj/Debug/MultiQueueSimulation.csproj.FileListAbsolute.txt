@@ -30,3 +30,19 @@ E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\MultiQueueSimu
 E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CopyComplete
 E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.exe
 E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.pdb
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueSimulation.exe.config
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueSimulation.exe
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueSimulation.pdb
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueModels.dll
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueModels.pdb
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.AssemblyReference.cache
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.SuggestedBindingRedirects.cache
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Form1.resources
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.InterArrivalDistributionForm.resources
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Properties.Resources.resources
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.ServersForm.resources
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.GenerateResource.cache
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CoreCompileInputs.cache
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CopyComplete
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.exe
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.pdb

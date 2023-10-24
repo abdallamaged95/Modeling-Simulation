@@ -45,8 +45,10 @@
     <Compile Include="Enums.cs" />
     <Compile Include="PerformanceMeasures.cs" />
     <Compile Include="Server.cs" />
+    <Compile Include="ServerSelector.cs" />
     <Compile Include="SimulationCase.cs" />
     <Compile Include="SimulationSystem.cs" />
+    <Compile Include="SimulationTableHandler.cs" />
     <Compile Include="SplitController.cs" />
     <Compile Include="TimeDistribution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
