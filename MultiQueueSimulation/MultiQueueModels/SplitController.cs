@@ -31,17 +31,18 @@ namespace MultiQueueModels
             {
                 string[] times = input[idx].Split(',', ' ').
                     Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
-                system.InterarrivalDistribution.Add(addDistribution(system, times));
+                addDistribution(system.InterarrivalDistribution, times);
             }
         }
 
-        private static TimeDistribution addDistribution(SimulationSystem system, string[] times)
+        private static void addDistribution(List<TimeDistribution> list, string[] times)
         {
             TimeDistribution data = new TimeDistribution();
             data.Time = int.Parse(times[0]);
             data.Probability = Convert.ToDecimal(times[1]);
             idx++;
-            return data;
+            if (data.Probability > 0)
+                list.Add(data);
         }
         private static void serverDistributions(SimulationSystem system, string[] input)
         {
@@ -60,7 +61,7 @@ namespace MultiQueueModels
                 string[] times = input[idx].Split(',', ' ')
                     .Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
                 
-                server.TimeDistribution.Add(addDistribution(system, times));
+                addDistribution(server.TimeDistribution, times);
                 server.ID = id;
             }
             system.Servers.Add(server);

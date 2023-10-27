@@ -73,42 +73,23 @@ namespace MultiQueueModels
             int totalWaitingTime = 0, totalCustomersWaited = 0;
             int idx = 0;
             Random random = new Random();
-            foreach (SimulationCase curr in system.SimulationTable)
+            foreach (SimulationCase customer in system.SimulationTable)
             {
-                curr.AssignedServer = ServerSelector.select(system, curr.ArrivalTime);
-                curr.StartTime = Math.Max(curr.ArrivalTime, curr.AssignedServer.FinishTime);
-                curr.TimeInQueue = curr.StartTime - curr.ArrivalTime;
-                totalWaitingTime += curr.TimeInQueue;
-                totalCustomersWaited += (curr.TimeInQueue != 0)? 1 : 0;
-                curr.RandomService = random.Next(1, 101);
-                curr.ServiceTime = serverServiceTime(curr.RandomService, curr.AssignedServer);
-                curr.EndTime = curr.StartTime + curr.ServiceTime;
-                curr.AssignedServer.FinishTime = curr.EndTime;
-                curr.AssignedServer.TotalWorkingTime += curr.ServiceTime;
+                customer.AssignedServer = ServerSelector.select(system, customer.ArrivalTime);
+                customer.StartTime = Math.Max(customer.ArrivalTime, customer.AssignedServer.FinishTime);
+                customer.TimeInQueue = customer.StartTime - customer.ArrivalTime;
+                totalWaitingTime += customer.TimeInQueue;
+                totalCustomersWaited += (customer.TimeInQueue != 0)? 1 : 0;
+                customer.RandomService = random.Next(1, 101);
+                customer.ServiceTime = serverServiceTime(customer.RandomService, customer.AssignedServer);
+                customer.EndTime = customer.StartTime + customer.ServiceTime;
+                customer.AssignedServer.FinishTime = customer.EndTime;
+                customer.AssignedServer.TotalWorkingTime += customer.ServiceTime;
                 idx++;
             }
-            system.PerformanceMeasures.AverageWaitingTime = (decimal)totalWaitingTime /
-                (decimal)system.StoppingNumber;
-            system.PerformanceMeasures.WaitingProbability = (decimal)totalCustomersWaited /
-                (decimal)system.StoppingNumber;
-            system.PerformanceMeasures.MaxQueueLength = maxQueueLength();
+
         }
-        private int maxQueueLength()
-        {
-            int maxLength = 0;
-            int cnt = 0;
-            foreach (SimulationCase Case in system.SimulationTable)
-            {
-                if (Case.TimeInQueue != 0)
-                    cnt++;
-                else
-                {
-                    if (cnt > maxLength) maxLength = cnt;
-                    cnt = 0;
-                }
-            }
-            return cnt;
-        }
+
         private int interArrivalTime(int randomNum)
         {
             for (int i = 0; i < system.InterarrivalDistribution.Count; i++)

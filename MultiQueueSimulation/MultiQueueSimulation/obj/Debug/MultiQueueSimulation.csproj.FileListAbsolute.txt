@@ -46,3 +46,4 @@ D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueS
 D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CopyComplete
 D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.exe
 D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.pdb
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.SimulationTableForm.resources

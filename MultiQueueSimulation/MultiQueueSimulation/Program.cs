@@ -16,17 +16,18 @@ namespace MultiQueueSimulation
         [STAThread]
         static void Main()
         {
-            SimulationSystem system = new SimulationSystem();
+            //SimulationSystem system = new SimulationSystem();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form form1 = new Form1(system);
+
+            //SimulationTableHandler handler = new SimulationTableHandler(system);
+            //handler.Simulate();
+            Form form1 = new Form1();
             Application.Run(form1);
 
-            SimulationTableHandler handler = new SimulationTableHandler(system);
-            handler.Simulate();
-            string result = TestingManager.Test(system, Constants.FileNames.TestCase1);
-            MessageBox.Show(result);
+            //string result = TestingManager.Test(system, Constants.FileNames.TestCase2);
+            //MessageBox.Show(result);
 
 
            

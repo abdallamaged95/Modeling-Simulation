@@ -14,11 +14,11 @@ namespace MultiQueueModels
             switch (system.SelectionMethod)
             {
                 case Enums.SelectionMethod.HighestPriority:
-                    return prioritySelect(availableServers, arrivalTime);
+                    return prioritySelect(availableServers);
                 case Enums.SelectionMethod.Random:
-                    return randomSelect(availableServers, arrivalTime);
+                    return randomSelect(availableServers);
                 case Enums.SelectionMethod.LeastUtilization:
-                    return utilizationSelect(availableServers, arrivalTime);
+                    return utilizationSelect(availableServers);
                 default: 
                     return null;
             }
@@ -53,7 +53,7 @@ namespace MultiQueueModels
             }
             return servers;
         }
-        private static Server prioritySelect(List<Server> Servers, int arrivalTime)
+        private static Server prioritySelect(List<Server> Servers)
         {
             Server server = null;
             int id = int.MaxValue;
@@ -66,22 +66,26 @@ namespace MultiQueueModels
 
             return server;
         }
-        private static Server randomSelect(List<Server> Servers, int arrivalTime)
+        private static Server randomSelect(List<Server> Servers)
         {
             return Servers[rand.Next(0, Servers.Count)];
         }
 
-        private static Server utilizationSelect(List<Server> Servers, int arrivalTime)
+        private static Server utilizationSelect(List<Server> Servers)
         {
-            Server server = null;
-            int workingTime = 0;
+            List<Server> selected = new List<Server>();
+            int workingTime = int.MaxValue;
             for (int i = 0; i < Servers.Count; i++)
-                if (Servers[i].TotalWorkingTime < workingTime)
+                if (Servers[i].TotalWorkingTime <= workingTime)
                 {
-                    server = Servers[i];
-                    workingTime = server.TotalWorkingTime;
+                    workingTime = Servers[i].TotalWorkingTime;
                 }
-            return server;
+            foreach (Server server in Servers)
+            {
+                if (server.TotalWorkingTime == workingTime)
+                    selected.Add(server);
+            }
+            return prioritySelect(selected);
         }
     }
 }

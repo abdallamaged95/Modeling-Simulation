@@ -1,4 +1,5 @@
 ﻿using MultiQueueModels;
+using MultiQueueTesting;
 using System;
 using System.Data;
 using System.IO;
@@ -10,14 +11,14 @@ namespace MultiQueueSimulation
     public partial class Form1 : Form
     {
         public SimulationSystem system;
-        public Form1(SimulationSystem system)
+        public Form1()
         {
             InitializeComponent();
-            this.system = system;
         }
 
         private void browseButton_Click(object sender, EventArgs e)
         {
+            this.system = new SimulationSystem();
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
             string inputText = "";
@@ -34,7 +35,24 @@ namespace MultiQueueSimulation
             }
 
             SplitController.readInput(system, inputText);
+            SimulationTableHandler handler = new SimulationTableHandler(system);
+            handler.Simulate();
 
+            string tstResult = "";
+            switch (openFileDialog1.FileName[openFileDialog1.FileName.Length - 5])
+            {
+                case '1':
+                    tstResult = TestingManager.Test(system, Constants.FileNames.TestCase1);
+                    break;
+                case '2':
+                    tstResult = TestingManager.Test(system, Constants.FileNames.TestCase2);
+                    break;
+                case '3':
+                    tstResult = TestingManager.Test(system, Constants.FileNames.TestCase3);
+                    break;
+            }
+            MessageBox.Show(tstResult);
+            
             serverNum.Text = system.NumberOfServers.ToString();
             stoppingNumber.Text = system.StoppingNumber.ToString();
             stoppingCriteria.Text = system.StoppingCriteria.ToString();
@@ -59,6 +77,12 @@ namespace MultiQueueSimulation
                 ServersForm form = new ServersForm(system.Servers);
                 form.Show();
             }
+        }
+
+        private void simulationTableBtn_Click(object sender, EventArgs e)
+        {
+            SimulationTableForm form = new SimulationTableForm(system.SimulationTable);
+            form.Show();
         }
     }
 }
