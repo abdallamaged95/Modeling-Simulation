@@ -30,10 +30,10 @@ namespace MultiQueueModels
         private void fillByCustomersNum()
         {
             Random rand = new Random();
-            for (int i = 1; i <= system.StoppingNumber; i++)
+            for (int i = 0; i < system.StoppingNumber; i++)
             {
                 SimulationCase customer = new SimulationCase();
-                customer.CustomerNumber = i;
+                customer.CustomerNumber = i+1;
                 customer.RandomInterArrival = rand.Next(1, 101);
                 customer.InterArrival = interArrivalTime(customer.RandomInterArrival);
                 if (i == 0)
@@ -70,48 +70,44 @@ namespace MultiQueueModels
         public void Simulate()
         {
             fillTable();
-            int waitings = 0;
+            int totalWaitingTime = 0, totalCustomersWaited = 0;
             int idx = 0;
-            while (idx < system.SimulationTable.Count)
+            Random random = new Random();
+            foreach (SimulationCase curr in system.SimulationTable)
             {
-                SimulationCase curr = system.SimulationTable[idx];
                 curr.AssignedServer = ServerSelector.select(system, curr.ArrivalTime);
-                if (curr.AssignedServer == null)
-                {
-                    waitings++;
-                    curr.AssignedServer = nearestServer();
-                    curr.StartTime = curr.AssignedServer.FinishTime;
-                    curr.TimeInQueue = curr.AssignedServer.FinishTime - curr.ArrivalTime;
-                    //if (curr.TimeInQueue > maxQueue)
-                    //    maxqueue = curr.timeinqueue;
-                }
-                else
-                {
-                    curr.StartTime = curr.ArrivalTime;
-                    curr.TimeInQueue = 0;
-                }
+                curr.StartTime = Math.Max(curr.ArrivalTime, curr.AssignedServer.FinishTime);
+                curr.TimeInQueue = curr.StartTime - curr.ArrivalTime;
+                totalWaitingTime += curr.TimeInQueue;
+                totalCustomersWaited += (curr.TimeInQueue != 0)? 1 : 0;
+                curr.RandomService = random.Next(1, 101);
                 curr.ServiceTime = serverServiceTime(curr.RandomService, curr.AssignedServer);
-                curr.AssignedServer.FinishTime = curr.StartTime + curr.ServiceTime;
-                curr.EndTime = curr.AssignedServer.FinishTime;
+                curr.EndTime = curr.StartTime + curr.ServiceTime;
+                curr.AssignedServer.FinishTime = curr.EndTime;
                 curr.AssignedServer.TotalWorkingTime += curr.ServiceTime;
-                //curr.AssignedServer.Utilization = curr.AssignedServer.TotalWorkingTime /
-                //    system.SimulationTable[system.SimulationTable.Count - 1].EndTime;
                 idx++;
             }
-            system.PerformanceMeasures.WaitingProbability = (decimal)waitings /
-                system.SimulationTable.Count;
+            system.PerformanceMeasures.AverageWaitingTime = (decimal)totalWaitingTime /
+                (decimal)system.StoppingNumber;
+            system.PerformanceMeasures.WaitingProbability = (decimal)totalCustomersWaited /
+                (decimal)system.StoppingNumber;
+            system.PerformanceMeasures.MaxQueueLength = maxQueueLength();
         }
-        private Server nearestServer()
+        private int maxQueueLength()
         {
-            Server server = null;
-            int min = int.MaxValue;
-            for (int i = 0; i < system.Servers.Count; i++)
-                if (system.Servers[i].FinishTime < min)
+            int maxLength = 0;
+            int cnt = 0;
+            foreach (SimulationCase Case in system.SimulationTable)
+            {
+                if (Case.TimeInQueue != 0)
+                    cnt++;
+                else
                 {
-                    server = system.Servers[i];
-                    min = system.Servers[i].FinishTime;
+                    if (cnt > maxLength) maxLength = cnt;
+                    cnt = 0;
                 }
-            return server;
+            }
+            return cnt;
         }
         private int interArrivalTime(int randomNum)
         {

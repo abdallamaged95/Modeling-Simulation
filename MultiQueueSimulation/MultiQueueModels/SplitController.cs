@@ -71,7 +71,7 @@ namespace MultiQueueModels
 
             system.StoppingNumber = int.Parse(input[3]);
 
-            system.StoppingCriteria = (input[5] == "1") ? Enums.StoppingCriteria.NumberOfCustomers
+            system.StoppingCriteria = (int.Parse(input[5]) == 1) ? Enums.StoppingCriteria.NumberOfCustomers
             : Enums.StoppingCriteria.SimulationEndTime;
 
 
