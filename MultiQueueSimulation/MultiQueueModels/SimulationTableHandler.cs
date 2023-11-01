@@ -8,7 +8,7 @@ namespace MultiQueueModels
 {
     public class SimulationTableHandler
     {
-        SimulationSystem system;
+        public SimulationSystem system;
         Queue<SimulationCase> waiting;
         public SimulationTableHandler(SimulationSystem system) 
         {

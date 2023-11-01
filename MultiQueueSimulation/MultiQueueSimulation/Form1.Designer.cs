@@ -40,12 +40,15 @@
             this.interArrivalBtn = new System.Windows.Forms.Button();
             this.serversDistributionBtn = new System.Windows.Forms.Button();
             this.simulationTableBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // browseButton
             // 
             this.browseButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.browseButton.Location = new System.Drawing.Point(0, 361);
+            this.browseButton.Location = new System.Drawing.Point(0, 359);
             this.browseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.browseButton.MaximumSize = new System.Drawing.Size(0, 50);
             this.browseButton.MinimumSize = new System.Drawing.Size(0, 50);
@@ -165,11 +168,46 @@
             this.simulationTableBtn.UseVisualStyleBackColor = true;
             this.simulationTableBtn.Click += new System.EventHandler(this.simulationTableBtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(393, 231);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(192, 46);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "ViewGraph";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(189, 243);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
+            this.comboBox1.TabIndex = 13;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(82, 246);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Select Server";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 411);
+            this.ClientSize = new System.Drawing.Size(731, 409);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.simulationTableBtn);
             this.Controls.Add(this.serversDistributionBtn);
             this.Controls.Add(this.interArrivalBtn);
@@ -183,10 +221,11 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.browseButton);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(749, 458);
-            this.MinimumSize = new System.Drawing.Size(749, 458);
+            this.MaximumSize = new System.Drawing.Size(749, 456);
+            this.MinimumSize = new System.Drawing.Size(749, 456);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +245,8 @@
         private System.Windows.Forms.Button interArrivalBtn;
         private System.Windows.Forms.Button serversDistributionBtn;
         private System.Windows.Forms.Button simulationTableBtn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
