@@ -23,10 +23,21 @@ namespace MultiQueueModels
         public List<TimeDistribution> InterarrivalDistribution { get; set; }
         public Enums.StoppingCriteria StoppingCriteria { get; set; }
         public Enums.SelectionMethod SelectionMethod { get; set; }
+        public int TotalWaitingCustomers {get; set;}
 
         ///////////// OUTPUTS /////////////
         public List<SimulationCase> SimulationTable { get; set; }
         public PerformanceMeasures PerformanceMeasures { get; set; }
+
+        public int CalcEndTime()
+        {
+            int systemEndTime = 0;
+            foreach (Server server in this.Servers)
+            {
+                systemEndTime = Math.Max(systemEndTime, server.FinishTime);
+            }
+            return systemEndTime;
+        }
 
     }
 }

@@ -73,11 +73,13 @@ namespace MultiQueueModels
             int totalWaitingTime = 0, totalCustomersWaited = 0;
             int idx = 0;
             Random random = new Random();
+            system.TotalWaitingCustomers = 0;
             foreach (SimulationCase customer in system.SimulationTable)
             {
                 customer.AssignedServer = ServerSelector.select(system, customer.ArrivalTime);
                 customer.StartTime = Math.Max(customer.ArrivalTime, customer.AssignedServer.FinishTime);
                 customer.TimeInQueue = customer.StartTime - customer.ArrivalTime;
+                system.TotalWaitingCustomers += (customer.TimeInQueue > 0) ? 1 : 0;
                 totalWaitingTime += customer.TimeInQueue;
                 totalCustomersWaited += (customer.TimeInQueue != 0)? 1 : 0;
                 customer.RandomService = random.Next(1, 101);
@@ -85,6 +87,8 @@ namespace MultiQueueModels
                 customer.EndTime = customer.StartTime + customer.ServiceTime;
                 customer.AssignedServer.FinishTime = customer.EndTime;
                 customer.AssignedServer.TotalWorkingTime += customer.ServiceTime;
+                customer.AssignedServer.Customers.Add(customer);
+                customer.serverId = customer.AssignedServer.ID;
                 idx++;
             }
 

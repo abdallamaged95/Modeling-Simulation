@@ -8,6 +8,7 @@ namespace MultiQueueModels
 {
     public class Server
     {
+        
         public Server()
         {
             this.TimeDistribution = new List<TimeDistribution>();
@@ -23,6 +24,8 @@ namespace MultiQueueModels
         //optional if needed use them
         public int FinishTime { get; set; }
         public int TotalWorkingTime { get; set; }
+        
+        public List<SimulationCase> Customers = new List<SimulationCase>();
 
         /// 
         decimal idleServerTime = 0;
@@ -32,10 +35,12 @@ namespace MultiQueueModels
         public void CalculateServerPerformance(SimulationSystem MySystem)
         {
 
+            int systemEndTime = MySystem.CalcEndTime();
 
-            idleServerTime = MySystem.SimulationTable.Last().EndTime - TotalWorkingTime;
+            //idleServerTime = MySystem.SimulationTable.Last().EndTime - TotalWorkingTime;
+            idleServerTime = systemEndTime - TotalWorkingTime;
 
-            IdleProbability = idleServerTime / MySystem.SimulationTable.Last().EndTime;
+            IdleProbability = idleServerTime / systemEndTime;
 
 
 
@@ -57,23 +62,9 @@ namespace MultiQueueModels
                 AverageServiceTime = 0;
 
 
-            Utilization = (decimal)TotalWorkingTime / (decimal)MySystem.SimulationTable.Last().EndTime;
+            Utilization = (decimal)TotalWorkingTime / (decimal)systemEndTime;
 
         }
-        public void GraphLogic(SimulationSystem MySystem)
-        {
 
-            for (int i = 0; i < 20; i++)
-            {
-                if(ID == MySystem.SimulationTable[i].AssignedServer.ID)
-                {
-                    if (MySystem.SimulationTable[i].ServiceTime != null)
-                    {
-
-                    }
-                }
-            }
-
-        }
     }
 }

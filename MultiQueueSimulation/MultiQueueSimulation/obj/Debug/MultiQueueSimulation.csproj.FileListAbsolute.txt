@@ -97,3 +97,4 @@ D:\Fourth-year\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj
 D:\Fourth-year\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.pdb
 D:\Fourth-year\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Graph.resources
 D:\Programming\Projects\coding\fcis_projects\fourth year\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Graph.resources
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Graph.resources

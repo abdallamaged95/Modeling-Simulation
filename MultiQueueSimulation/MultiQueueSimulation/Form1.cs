@@ -44,7 +44,8 @@ namespace MultiQueueSimulation
             {
                 system.Servers[i].CalculateServerPerformance(system);
             }
-           
+            //Server.ProbabilityOfIdleServer(system);
+
             system.PerformanceMeasures.maxqlnew(system);
             //////////////
             comboBox1.Items.Clear();
@@ -106,7 +107,10 @@ namespace MultiQueueSimulation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Graph form2 = new Graph();
+            int serverIndex = int.Parse(comboBox1.Text);
+            Graph form2 = new Graph(serverIndex,
+                                    system.Servers[serverIndex-1].Customers,
+                                    system.CalcEndTime());
             form2.Show();
         }
 

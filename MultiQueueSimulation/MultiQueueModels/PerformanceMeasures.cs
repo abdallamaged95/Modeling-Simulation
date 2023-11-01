@@ -55,46 +55,34 @@ namespace MultiQueueModels
 
 
 
+            // 2 3
+            // 3 2
+            // 0 0 1 2 2 2 0 0 0 0 0 0 0
 
 
 
     }
-       public void maxqlnew(SimulationSystem MySystem)
+
+        public void maxqlnew(SimulationSystem system)
         {
-            List<int> l1 = new List<int>();
-            List<int> l2 = new List<int>();
-            int final = 0;
-            foreach (SimulationCase var in MySystem.SimulationTable)
+
+            int maximumQueueLength = 0;
+
+            for (int i = 0; i < system.SimulationTable.Count; i++)
             {
-                if (var.TimeInQueue > 0)
+                int count = 0;
+                for (int j = i; j < system.SimulationTable.Count; j++)
                 {
-                    for (int k = 0; k < var.TimeInQueue; k++)
+                    if (system.SimulationTable[i].StartTime > system.SimulationTable[j].ArrivalTime)
                     {
-                        l1.Add(var.ArrivalTime + k);
-                        l2.Add(var.ArrivalTime + k);
+                        count++;
                     }
                 }
+                if (count > maximumQueueLength) maximumQueueLength = count;
+
             }
-            foreach (int l in l1)
-            {
-                int counter = 0;
-                foreach (int ln in l2)
-                {
-                    if (l == ln)
-                    {
-                        counter = counter + 1;
-                    }
-                }
-                if (counter > final)
-                {
-                    final = counter;
-                }
-            }
-            MaxQueueLength= final;
+            MaxQueueLength = maximumQueueLength;
         }
-
-
-
 
 
 
