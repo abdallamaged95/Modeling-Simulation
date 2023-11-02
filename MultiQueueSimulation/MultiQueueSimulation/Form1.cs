@@ -46,7 +46,8 @@ namespace MultiQueueSimulation
             }
             //Server.ProbabilityOfIdleServer(system);
 
-            system.PerformanceMeasures.maxqlnew(system);
+            //system.PerformanceMeasures.maxqlnew(system);
+            system.PerformanceMeasures.MaxQueue(system);
             //////////////
             comboBox1.Items.Clear();
             for (int i = 1; i <= system.Servers.Count; i++)

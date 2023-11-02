@@ -16,75 +16,45 @@ namespace MultiQueueModels
         public decimal WaitingProbability { get; set; }
 
 
-        
-        /// /////////////
-       
-     
-
-
-
         public void CalculatePerformance(SimulationSystem MySystem)
         {
             decimal TotalTimeQueue = 0; 
             decimal TotalNoOfWaiter=0;  
             var MaxQ=new Queue<SimulationCase>();
-            int maxL = 0;
             for (int i = 0; i < MySystem.SimulationTable.Count; i++)
             {
-               if(MySystem.SimulationTable[i].TimeInQueue != 0)
+                if(MySystem.SimulationTable[i].TimeInQueue != 0)
                 {
-                    TotalNoOfWaiter = TotalNoOfWaiter + 1;
+                    TotalNoOfWaiter++;
                 }
 
-                /////////////////////
-
-              
-
-                //////////////////////////
-
-
-                TotalTimeQueue = TotalTimeQueue + MySystem.SimulationTable[i].TimeInQueue;
-                
-
+                TotalTimeQueue += MySystem.SimulationTable[i].TimeInQueue;
 
             }
             AverageWaitingTime = TotalTimeQueue / (decimal)(MySystem.SimulationTable.Count);
             WaitingProbability = TotalNoOfWaiter / (decimal)(MySystem.SimulationTable.Count);
-            MaxQueueLength= maxL;
 
-
-
-
-            // 2 3
-            // 3 2
-            // 0 0 1 2 2 2 0 0 0 0 0 0 0
-
-
-
-    }
-
-        public void maxqlnew(SimulationSystem system)
-        {
-
-            int maximumQueueLength = 0;
-
-            for (int i = 0; i < system.SimulationTable.Count; i++)
-            {
-                int count = 0;
-                for (int j = i; j < system.SimulationTable.Count; j++)
-                {
-                    if (system.SimulationTable[i].StartTime > system.SimulationTable[j].ArrivalTime)
-                    {
-                        count++;
-                    }
-                }
-                if (count > maximumQueueLength) maximumQueueLength = count;
-
-            }
-            MaxQueueLength = maximumQueueLength;
         }
 
-
+        public void MaxQueue(SimulationSystem MySystem)
+        {
+            int[] timeArray = new int[MySystem.CalcEndTime()];
+            foreach(SimulationCase customer in MySystem.SimulationTable)
+            {
+                if (customer.TimeInQueue != 0)
+                {
+                    timeArray[customer.ArrivalTime]++;
+                    timeArray[customer.StartTime]--;
+                }
+            }
+            int maxLength = 0, sum = 0;
+            for (int i = 0; i < timeArray.Length; i++)
+            {
+                sum += timeArray[i];
+                maxLength = Math.Max(maxLength, sum);
+            }
+            MaxQueueLength =  maxLength;
+        }
 
     }
 }
