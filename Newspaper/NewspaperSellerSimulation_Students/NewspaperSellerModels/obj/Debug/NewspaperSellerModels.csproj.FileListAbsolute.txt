@@ -36,3 +36,9 @@ D:\fcis2024 7th\Modeling -20231016T055224Z-001\Modeling\labs\Lab 5_Task 2-202311
 D:\fcis2024 7th\Modeling -20231016T055224Z-001\Modeling\labs\Lab 5_Task 2-20231117T171047Z-001\Lab 3_Task 2\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.CoreCompileInputs.cache
 D:\fcis2024 7th\Modeling -20231016T055224Z-001\Modeling\labs\Lab 5_Task 2-20231117T171047Z-001\Lab 3_Task 2\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.dll
 D:\fcis2024 7th\Modeling -20231016T055224Z-001\Modeling\labs\Lab 5_Task 2-20231117T171047Z-001\Lab 3_Task 2\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.pdb
+C:\Users\AboEnneel\Desktop\Modeling-Simulation-cc9d9c8f7be1ab9b3d93d88468e024aa8033e81e\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\bin\Debug\NewspaperSellerModels.dll
+C:\Users\AboEnneel\Desktop\Modeling-Simulation-cc9d9c8f7be1ab9b3d93d88468e024aa8033e81e\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\bin\Debug\NewspaperSellerModels.pdb
+C:\Users\AboEnneel\Desktop\Modeling-Simulation-cc9d9c8f7be1ab9b3d93d88468e024aa8033e81e\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.AssemblyReference.cache
+C:\Users\AboEnneel\Desktop\Modeling-Simulation-cc9d9c8f7be1ab9b3d93d88468e024aa8033e81e\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.CoreCompileInputs.cache
+C:\Users\AboEnneel\Desktop\Modeling-Simulation-cc9d9c8f7be1ab9b3d93d88468e024aa8033e81e\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.dll
+C:\Users\AboEnneel\Desktop\Modeling-Simulation-cc9d9c8f7be1ab9b3d93d88468e024aa8033e81e\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.pdb

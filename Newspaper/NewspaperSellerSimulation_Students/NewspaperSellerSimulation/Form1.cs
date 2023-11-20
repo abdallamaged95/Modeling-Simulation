@@ -50,5 +50,10 @@ namespace NewspaperSellerSimulation
             handler.Simulate();
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -27,10 +27,34 @@ namespace NewspaperSellerModels
                 customer.RandomNewsDayType =random.Next(1,100);
                 customer.NewsDayType = DayType(customer.RandomNewsDayType);
                 customer.RandomDemand= random.Next(1, 100);
-                customer.Demand = demandDetails(customer.RandomDemand, system.DemandDistributions[idx-1]);
-                customer.SalesProfit = system.NumOfNewspapers * system.SellingPrice;
+                customer.Demand = demandDetails(customer.RandomDemand, system.DemandDistributions[random.Next(0, 7)]);
+                customer.DailyCost = system.NumOfNewspapers * system.SellingPrice;
                 purschprice = system.NumOfNewspapers * system.PurchasePrice;
-                // هتكمل بقا هنا باقي الحاجات اللي في table
+                // هتكمل بقا هنا باقي الحاجات اللي في table 
+                if(system.NumOfNewspapers > customer.Demand)
+                {
+                    decimal scrapNewspaper = system.NumOfNewspapers - customer.Demand;
+                    customer.LostProfit = 0;
+                    customer.ScrapProfit = system.ScrapPrice * scrapNewspaper;
+
+                }
+                else if(system.NumOfNewspapers < customer.Demand)
+                {
+                    decimal lostNewspaper = customer.Demand- system.NumOfNewspapers;
+                    customer.ScrapProfit = 0;
+                    customer.LostProfit = lostNewspaper * system.SellingPrice;
+
+                }
+                else
+                {
+                    customer.ScrapProfit = 0;
+                    customer.LostProfit = 0;
+
+                }
+                customer.SalesProfit = customer.Demand * system.SellingPrice;
+                customer.DailyNetProfit = customer.SalesProfit- customer.DailyCost-customer.LostProfit+customer.ScrapProfit;
+
+
                 idx++;
             }
 
