@@ -20,6 +20,7 @@ namespace NewspaperSellerModels
             int idx = 1;
             decimal purschprice = 0;
             Random random = new Random();
+            PerformanceMeasures p = new PerformanceMeasures();
             for (int i=0;i<system.NumOfRecords;i++)
             {
                 SimulationCase customer = new SimulationCase();
@@ -29,7 +30,15 @@ namespace NewspaperSellerModels
                 customer.RandomDemand= random.Next(1, 100);
                 customer.Demand = demandDetails(customer.RandomDemand, system.DemandDistributions,customer.NewsDayType);
                 customer.DailyCost = system.NumOfNewspapers * system.PurchasePrice;
-                customer.SalesProfit = customer.Demand * system.SellingPrice;
+                if(customer.Demand>=system.NumOfNewspapers)
+                {
+                    customer.SalesProfit = system.NumOfNewspapers * system.SellingPrice;
+                }
+                else
+                {
+                    customer.SalesProfit = customer.Demand * system.SellingPrice;
+                }
+                
                 purschprice = system.NumOfNewspapers * system.PurchasePrice;
                 // هتكمل بقا هنا باقي الحاجات اللي في table 
                 if(system.NumOfNewspapers > customer.Demand)
@@ -43,7 +52,7 @@ namespace NewspaperSellerModels
                 {
                     decimal lostNewspaper = customer.Demand- system.NumOfNewspapers;
                     customer.ScrapProfit = 0;
-                    customer.LostProfit =  lostNewspaper * system.PurchasePrice;
+                    customer.LostProfit =  lostNewspaper * (system.SellingPrice-system.PurchasePrice);
 
                 }
                 else
@@ -52,12 +61,24 @@ namespace NewspaperSellerModels
                     customer.LostProfit = 0;
 
                 }
-                customer.SalesProfit = customer.Demand * system.SellingPrice;
+                
                 customer.DailyNetProfit = customer.SalesProfit- customer.DailyCost-customer.LostProfit+customer.ScrapProfit;
                 system.SimulationTable.Add(customer);
 
                 idx++;
+                ////////////////////////////
+                
+                p.TotalSalesProfit += p.TotalSalesF(customer);
+                p.TotalCost += p.TotalCostF(customer);
+                p.TotalLostProfit += p.TotalLostProfitF(customer);
+                p.TotalScrapProfit += p.TotalScrapProfitF(customer);
+                p.TotalNetProfit += p.TotalNetProfitF(customer);
+                p.DaysWithMoreDemand += p.DaysWithMoreDemandF(customer,system.NumOfNewspapers);
+                p.DaysWithUnsoldPapers += p.DaysWithUnsoldPapersF(customer, system.NumOfNewspapers);
+
+
             }
+            system.PerformanceMeasures = p;
 
         }
 

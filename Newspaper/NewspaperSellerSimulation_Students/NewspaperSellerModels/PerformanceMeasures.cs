@@ -18,37 +18,37 @@ namespace NewspaperSellerModels
 
 
 
-        decimal TotalSalesF(SimulationCase customer)
+         public decimal TotalSalesF(SimulationCase customer)
         {
             return customer.SalesProfit;
         }
-        decimal TotalCostF(SimulationCase customer)
+        public decimal TotalCostF(SimulationCase customer)
         {
             return customer.DailyCost;
         }
-        decimal TotalLostProfitF(SimulationCase customer)
+       public  decimal TotalLostProfitF(SimulationCase customer)
         {
             return customer.LostProfit;
         }
-        decimal TotalScrapProfitF(SimulationCase customer)
+       public  decimal TotalScrapProfitF(SimulationCase customer)
         {
             return customer.ScrapProfit;
         }
-        decimal TotalNetProfitF(SimulationCase customer)
+       public  decimal TotalNetProfitF(SimulationCase customer)
         {
             return customer.DailyNetProfit;
         }
-        decimal DaysWithMoreDemandF(SimulationCase customer)
+        public int DaysWithMoreDemandF(SimulationCase customer,int x)
         {
-            if (customer.Demand > 70)
+            if (customer.Demand >x)
                 return 1;
             else return 0;
 
         }
 
-        decimal DaysWithUnsoldPapersF(SimulationCase customer)
+        public int DaysWithUnsoldPapersF(SimulationCase customer,int x)
         {
-            if (customer.Demand < 70)
+            if (customer.Demand < x)
                 return 1;
             else return 0;
 
