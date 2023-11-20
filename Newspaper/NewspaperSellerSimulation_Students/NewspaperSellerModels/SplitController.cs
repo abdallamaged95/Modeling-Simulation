@@ -18,8 +18,8 @@ namespace NewspaperSellerModels
 
             CalcRange.fillDayDistribution(system.DayTypeDistributions);
 
-            for(int i=0; i<system.DemandDistributions.Count;i++)
-               CalcRange.fillDayDistribution(system.DemandDistributions[i].DayTypeDistributions);
+            
+               CalcRange.filldemandDistribution(system.DemandDistributions);
         }
 
         private static void DayDistribution(SimulationSystem system, string[] input)

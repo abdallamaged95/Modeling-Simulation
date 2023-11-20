@@ -40,20 +40,48 @@ namespace NewspaperSellerSimulation
             }
 
             SplitController.readInput(system, inputText);
-            
+            smultionhandler handler = new smultionhandler(system);
+            handler.Simulate();
+            string tstResult = "";
+            switch (openFileDialog1.FileName[openFileDialog1.FileName.Length - 5])
+            {
+                case '1':
+                    tstResult = TestingManager.Test(system, Constants.FileNames.TestCase1);
+                    break;
+                case '2':
+                    tstResult = TestingManager.Test(system, Constants.FileNames.TestCase2);
+                    break;
+                case '3':
+                    tstResult = TestingManager.Test(system, Constants.FileNames.TestCase3);
+                    break;
+            }
+            MessageBox.Show(tstResult);
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            smultionhandler handler = new smultionhandler(system);
-            handler.Simulate();
+            
+            table newtable = new table(system.SimulationTable);
+            newtable.Show();
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void whichday_Click(object sender, EventArgs e)
+        {
+            daytype day = new daytype(system.DayTypeDistributions);
+            day.Show();
+        }
+
+        private void demandtable_Click(object sender, EventArgs e)
+        {
+          //  demand demands = new demand(system.DemandDistributions);
+          //  demands.Show();
         }
     }
 }

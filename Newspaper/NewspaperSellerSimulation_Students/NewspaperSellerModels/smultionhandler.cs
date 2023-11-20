@@ -27,8 +27,9 @@ namespace NewspaperSellerModels
                 customer.RandomNewsDayType =random.Next(1,100);
                 customer.NewsDayType = DayType(customer.RandomNewsDayType);
                 customer.RandomDemand= random.Next(1, 100);
-                customer.Demand = demandDetails(customer.RandomDemand, system.DemandDistributions[random.Next(0, 7)]);
-                customer.DailyCost = system.NumOfNewspapers * system.SellingPrice;
+                customer.Demand = demandDetails(customer.RandomDemand, system.DemandDistributions,customer.NewsDayType);
+                customer.DailyCost = system.NumOfNewspapers * system.PurchasePrice;
+                customer.SalesProfit = customer.Demand * system.SellingPrice;
                 purschprice = system.NumOfNewspapers * system.PurchasePrice;
                 // هتكمل بقا هنا باقي الحاجات اللي في table 
                 if(system.NumOfNewspapers > customer.Demand)
@@ -42,7 +43,7 @@ namespace NewspaperSellerModels
                 {
                     decimal lostNewspaper = customer.Demand- system.NumOfNewspapers;
                     customer.ScrapProfit = 0;
-                    customer.LostProfit = lostNewspaper * system.SellingPrice;
+                    customer.LostProfit =  lostNewspaper * system.PurchasePrice;
 
                 }
                 else
@@ -53,7 +54,7 @@ namespace NewspaperSellerModels
                 }
                 customer.SalesProfit = customer.Demand * system.SellingPrice;
                 customer.DailyNetProfit = customer.SalesProfit- customer.DailyCost-customer.LostProfit+customer.ScrapProfit;
-
+                system.SimulationTable.Add(customer);
 
                 idx++;
             }
@@ -75,18 +76,19 @@ namespace NewspaperSellerModels
             }
             return (Enums.DayType)(-1);
         }
-        private int demandDetails(int randomNum,DemandDistribution Daydetails)
+        private int demandDetails(int randomNum,List<DemandDistribution> Daydetails,Enums.DayType day)
         {
-
-            for (int i = 0; i < Daydetails.DayTypeDistributions.Count; i++)
-            {
-                if (Daydetails.DayTypeDistributions[i].DayType == DayType(randomNum))
+            //for () {
+                for (int i = 0; i < Daydetails.Count; i++)
                 {
-                    if (randomNum >= Daydetails.DayTypeDistributions[i].MinRange &&
-                    randomNum <= Daydetails.DayTypeDistributions[i].MaxRange)
-                        return Daydetails.Demand;
+                   // if (Daydetails[i].DayTypeDistributions[i].DayType == day)
+                    {
+                        if (randomNum >= Daydetails[i].DayTypeDistributions[(int)day].MinRange &&
+                        randomNum <= Daydetails[i].DayTypeDistributions[(int)day].MaxRange)
+                            return Daydetails[i].Demand;
+                    }
                 }
-            }
+            //}
             return -1;
         }
     }

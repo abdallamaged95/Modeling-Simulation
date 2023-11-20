@@ -42,3 +42,9 @@ C:\Users\AboEnneel\Desktop\Modeling-Simulation-cc9d9c8f7be1ab9b3d93d88468e024aa8
 C:\Users\AboEnneel\Desktop\Modeling-Simulation-cc9d9c8f7be1ab9b3d93d88468e024aa8033e81e\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.CoreCompileInputs.cache
 C:\Users\AboEnneel\Desktop\Modeling-Simulation-cc9d9c8f7be1ab9b3d93d88468e024aa8033e81e\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.dll
 C:\Users\AboEnneel\Desktop\Modeling-Simulation-cc9d9c8f7be1ab9b3d93d88468e024aa8033e81e\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.pdb
+C:\Users\fat7i\Downloads\Modeling\Modeling-Simulation-master\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\bin\Debug\NewspaperSellerModels.dll
+C:\Users\fat7i\Downloads\Modeling\Modeling-Simulation-master\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\bin\Debug\NewspaperSellerModels.pdb
+C:\Users\fat7i\Downloads\Modeling\Modeling-Simulation-master\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.AssemblyReference.cache
+C:\Users\fat7i\Downloads\Modeling\Modeling-Simulation-master\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.CoreCompileInputs.cache
+C:\Users\fat7i\Downloads\Modeling\Modeling-Simulation-master\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.dll
+C:\Users\fat7i\Downloads\Modeling\Modeling-Simulation-master\Newspaper\NewspaperSellerSimulation_Students\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.pdb
