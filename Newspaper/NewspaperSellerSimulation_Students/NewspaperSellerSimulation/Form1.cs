@@ -57,6 +57,7 @@ namespace NewspaperSellerSimulation
             }
             MessageBox.Show(tstResult);
 
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -80,8 +81,8 @@ namespace NewspaperSellerSimulation
 
         private void demandtable_Click(object sender, EventArgs e)
         {
-          //  demand demands = new demand(system.DemandDistributions);
-          //  demands.Show();
+            demand demands = new demand();
+            demands.Show();
         }
     }
 }
