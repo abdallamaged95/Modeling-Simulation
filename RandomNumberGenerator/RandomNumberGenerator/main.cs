@@ -62,15 +62,23 @@ namespace RandomNumberGenerator
             /*return (Math.Ceiling(Math.Log(num, 2)) == Math.Floor(Math.Log(num, 2)));*/
         }
 
+        private double GCD(double a, double b)
+        {
+            if (b == 0)
+                return a;
+            return GCD(b, a % b);
+        }
+
         private bool IsRelativePrime(double increment, double modulus)
         {
-            double count = Math.Min(increment, modulus);
+            /*double count = Math.Min(increment, modulus);
 
             for (double i = 2; i <= count; i++)
                 if (increment % i == 0 && modulus % i == 0)
                     return false;
-            return true;
-
+            return true;*/
+            return (GCD(increment, modulus) == 1);
+               
             /*GCD*/
  /*           double tmp;
             while (modulus != 0)
@@ -83,7 +91,9 @@ namespace RandomNumberGenerator
         }
         private bool IsPrime(double num)
         {
-            for (double i = 2; i <= Math.Sqrt(num); i++)
+            if (num % 2 == 0)
+                return false;
+            for (double i = 3; i <= Math.Sqrt(num); i+=2)
                 if (num % i == 0)
                     return false;
             return true;

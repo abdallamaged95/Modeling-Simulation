@@ -9,3 +9,14 @@ E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\RandomNumberGe
 E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\bin\Debug\RandomNumberGenerator.pdb
 E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.exe
 E:\Study\Fourth_Year\First_Term\New\Modelling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.pdb
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\bin\Debug\RandomNumberGenerator.exe.config
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\bin\Debug\RandomNumberGenerator.exe
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\bin\Debug\RandomNumberGenerator.pdb
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.csproj.AssemblyReference.cache
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.csproj.SuggestedBindingRedirects.cache
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.Form1.resources
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.Properties.Resources.resources
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.csproj.GenerateResource.cache
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.csproj.CoreCompileInputs.cache
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.exe
+D:\Study\FCIS 2024\Semester 7 FCIS 2024\Modeling\Modeling-Simulation\RandomNumberGenerator\RandomNumberGenerator\obj\Debug\RandomNumberGenerator.pdb
